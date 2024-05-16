@@ -17,13 +17,11 @@
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
-from src.app.ui.main_window import MainWindow
 
-def main():
-    window = MainWindow()
-    window.connect("destroy", Gtk.main_quit)
-    window.show_all()
-    Gtk.main()
-
-if __name__ == "__main__":
-    main()
+class MainWindow(Gtk.Window):
+    def __init__(self):
+        super().__init__(title="SkyRenderV1")
+        self.set_default_size(800, 600)
+        self.set_position(Gtk.WindowPosition.CENTER)
+        label = Gtk.Label(label="Welcome to SkyRenderV1!")
+        self.add(label)

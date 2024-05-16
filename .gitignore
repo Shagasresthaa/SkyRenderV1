@@ -1,4 +1,5 @@
 .env
-venv
+localEnv
 **/__pycache__
 **/*.pyc
+.vscode
